@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import "../styles/Appstyles.css";
+import Pokedex from "./Pokedex";
+import WildPokemon from "./WildPokemon";
 
 const App = () => {
   const [wildPoke, setWildPoke] = useState({});
@@ -29,33 +32,19 @@ const App = () => {
     }
   };
 
+  const releasePoke = (poke) => {
+    let updatedArr = pokedex.filter((elem) => elem.id !== poke.id);
+    setPokedex(updatedArr);
+  };
+
   return (
     <div>
       <header>
         <h1>Pokemon API</h1>
       </header>
 
-      <section>
-        <img
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${wildPoke.id}.png`}
-          alt={`${wildPoke.name}`}
-        />
-        <h3>{wildPoke.name}</h3>
-        <button onClick={() => catchPoke(wildPoke)}>Catch</button>
-      </section>
-
-      <section>
-        <h2>Pokedex</h2>
-        {pokedex.map((poke) => (
-          <div key={poke.id}>
-            <img
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png`}
-              alt={`${wildPoke.name}`}
-            />
-            <h3>{wildPoke.name}</h3>
-          </div>
-        ))}
-      </section>
+      <WildPokemon wildPoke={wildPoke} catchPoke={catchPoke} />
+      <Pokedex pokemon={pokedex} releasePoke={releasePoke} />
     </div>
   );
 };
