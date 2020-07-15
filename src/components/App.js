@@ -39,7 +39,7 @@ const App = () => {
 
   return (
     <div>
-      <header>
+      <header className="header">
         <h1>Pokemon API</h1>
       </header>
 

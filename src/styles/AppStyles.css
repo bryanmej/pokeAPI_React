@@ -5,5 +5,11 @@
 }
 
 body {
-  background: red;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
 }

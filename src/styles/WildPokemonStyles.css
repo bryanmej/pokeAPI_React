@@ -1,0 +1,35 @@
+.wildPokemonArea {
+  background-color: firebrick;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.encounter {
+  text-align: center;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: 300;
+}
+
+.wildPoke {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.wildName {
+  text-align: center;
+  color: #f3f3f3;
+  text-transform: uppercase;
+}
+
+.catch-btn {
+  width: 200px;
+  height: 35px;
+  margin: 25px auto;
+  background-color: #ffce00;
+  border: none;
+  outline: none;
+  color: #171717;
+  cursor: pointer;
+}
